@@ -22,7 +22,7 @@ class NewsspiderSpider(scrapy.Spider):
                 if i==5:
                     continue
                 article = NewsItem()
-                article["Section"]=txt
+                article["Section"]=" "+txt
                 a=response.xpath("//h2[text()='Latest updates']/parent::div/parent::div/following-sibling::div/div[1]")
                 # print(a,"lollllll")
                 article["Headline"]=a.xpath("div["+str(i)+"]/div/a/div/div[2]/div[2]/div[1]/div/h2/text()").get()
